@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="page-title">@ViewBag.PageTitle</h1>
+            @RenderSection("PageDescription", required: false)
+        </div>
+
+        <nav class="nav">
+            <button id="login-btn" onclick="openModal('login')">Login</button>
+            <button id="register-btn" onclick="openModal('register')">Registration</button>
+            <button id="profile-btn" style="display: none;">Profile</button>
+        </nav>
+    </header>
+    <main>
+        @RenderBody() <!-- Здесь будет содержимое Index.cshtml -->
+    </main>
+
+    <!-- Окно для логина/регистрации -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <iframe id="modal-frame" src="" frameborder="0"></iframe>
+        </div>
+
+    </div>
+
+    <script>
+        function openModal(type) {
+            let url = `Login_and_Registration.html?type=${type}`;
+            document.getElementById("modal-frame").src = url;
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("modal-frame").src = "";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Полное погружение";
+    ViewBag.PageTitle = "Полное погружение"; // <-- для шапки
+}
+
+
+@section Styles {
+    <link href="~/Content/styless-masages.css" rel="stylesheet" />
+}
+
+<body>
+    <main class="content">
+        <section class="description">
+            <p>Специальная массажная комната, создающая эффект полного расслабления.</p>
+        </section>
+
+        <section class="form-section">
+            <h2>Запись</h2>
+            <form>
+                <label>Имя</label>
+                <input type="text" required>
+
+                <label>Фамилия</label>
+                <input type="text" required>
+
+                <label>Дата</label>
+                <input type="date" required>
+
+                <label>Время</label>
+                <input type="time" required>
+
+                <button type="submit">Отправить</button>
+            </form>
+        </section>
+</body>
+

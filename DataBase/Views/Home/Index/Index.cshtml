@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Массаж диплом";
+    ViewBag.PageTitle = "Массаж диплом"; // <-- для шапки
+}
+
+
+<main class="services">
+    <section class="service">
+        <div class="logo-placeholder"></div>
+        <h2>Классический массаж</h2>
+        <p>Погрузитесь в мир гармонии и релаксации с нашими классическими видами массажа...</p>
+        <a href="@Url.Action("Classic", "Home")" class="service-button">Посмотреть услуги</a>
+    </section>
+
+    <section class="service">
+        <div class="logo-placeholder"></div>
+        <h2>VR-массаж</h2>
+        <p>Ощутите новый уровень релаксации с нашим VR-массажем...</p>
+        <a href="@Url.Action("VRmassage", "Home")" class="service-button">Посмотреть услуги</a>
+    </section>
+
+    <section class="service">
+        <div class="logo-placeholder"></div>
+        <h2>Полное погружение</h2>
+        <p>Позвольте себе полностью отключиться от реальности в нашей уникальной комнате...</p>
+        <a href="@Url.Action("immerrion", "Home")" class="service-button">Посмотреть услуги</a>
+    </section>
+</main>
+

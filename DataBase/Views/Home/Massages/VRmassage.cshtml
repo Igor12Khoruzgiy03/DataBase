@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "VR-Массаж";
+    ViewBag.PageTitle = "VR-Массаж"; // <-- для шапки
+}
+
+
+@section Styles {
+    <link href="/Content/styless-masages.css" rel="stylesheet" />
+}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const massageBlocks = document.querySelectorAll(".massage-block");
+
+    massageBlocks.forEach(block => {
+        block.addEventListener("mouseover", () => {
+            const tooltip = block.querySelector(".tooltip");
+            if (tooltip) {
+                tooltip.style.opacity = "1";
+                tooltip.style.visibility = "visible";
+            }
+        });
+
+        block.addEventListener("mouseleave", () => {
+            const tooltip = block.querySelector(".tooltip");
+            if (tooltip) {
+                tooltip.style.opacity = "0";
+                tooltip.style.visibility = "hidden";
+            }
+        });
+    });
+});
+</script>
+
+
+<body>
+    <main class="content">
+        @section PageDescription {
+            <section class="description-container">
+                <p class="description">
+                    VR-масаж — це унікальна можливість поєднати релаксацію з віртуальними світами.
+                    Оберіть фон, звуки природи та насолоджуйтесь масажем, який подарує вам повне відчуття занурення.
+                </p>
+                <p class="warning">
+                    Кому не рекомендується: Не підходить людям із схильністю до запаморочення, мігрені, епілепсії або чутливістю до віртуальної реальності.
+                    У разі сумнівів проконсультуйтеся з лікарем перед сеансом.
+                </p>
+            </section>
+        }
+
+    <section class="massage-container">
+
+        <div class="massage-block">
+            <img src="~/Content/Photo/bee-on-daisy.jpg" alt="Массаж" class="massage-img">
+            <h3 class="massage-title">Пляж - 500 грн</h3>
+            <p class="massage-description">Насолоджуйтеся масажем під шум океанських хвиль, які перенесуть вас на білосніжний пляж із золотистим піском.</p>
+            <div class="tooltip">Вся кнопка кликабельна</div>
+        </div>
+
+        <div class="massage-block">
+            <img src="~/Content/Photo/bee-on-daisy.jpg" alt="Ліс" class="massage-img">
+            <h3 class="massage-title">Ліс - 450 грн</h3>
+            <p>Релаксація серед звуків лісу: спів птахів, шелест листя та аромат соснових дерев.</p>
+            <div class="tooltip">Вся кнопка кликабельна</div>
+        </div>
+
+        <div class="massage-block">
+            <img src="~/Content/Photo/bee-on-daisy.jpg" alt="Місто" class="massage-img">
+            <h3 class="massage-title">Місто - 420 грн</h3>
+            <p>Відчуйте ритм мегаполісу, не покидаючи масажного столу. Ідеально для тих, хто любить атмосферу міста.</p>
+            <div class="tooltip">Вся кнопка кликабельна</div>
+        </div>
+
+        <div class="massage-block" data-url="desert-massage.html">
+            <img src="~/Content/Photo/bee-on-daisy.jpg" alt="Пустеля" class="massage-img">
+            <h3 class="massage-title">Пустеля - 450 грн</h3>
+            <p>Пориньте в атмосферу пустелі з її теплими барвами, вітром і гармонією природи.</p>
+            <div class="tooltip">Вся кнопка кликабельна</div>
+        </div>
+
+        <div class="massage-block" data-url="desert-massage.html">
+            <img src="~/Content/Photo/bee-on-daisy.jpg" alt="Пустеля" class="massage-img">
+            <h3 class="massage-title">Джунгли - 400 грн</h3>
+            <p>Пориньте в атмосферу пустелі з її теплими барвами, вітром і гармонією природи.</p>
+            <div class="tooltip">Вся кнопка кликабельна</div>
+        </div>
+
+    </section>
+</body>
+
+

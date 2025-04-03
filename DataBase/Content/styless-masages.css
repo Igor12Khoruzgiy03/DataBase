@@ -1,0 +1,145 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.page-title {
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.description-container {
+    max-width: 80%;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.description, .warning {
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.warning {
+    color: #ff6961;
+    font-weight: bold;
+}
+
+.massage-container {
+    display: flex;
+    flex-wrap: wrap; /* Позволит переносить карточки на следующую строку при нехватке места */
+    justify-content: space-between; /* Равномерное распределение карточек */
+    gap: 20px;
+    max-width: 90%; /* Чтобы не прилипали к краям экрана */
+    margin: 20px auto;
+}
+
+.massage-block {
+    width: 300px; /* Было 250px, теперь увеличено */
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.massage-block:hover {
+     transform: scale(1.05);
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip {
+    position: absolute;
+    top: 100%; /* Помещаем tooltip сразу под карточкой */
+    left: 50%; /* Центрируем по горизонтали относительно карточки */
+    transform: translateX(-50%); /* Корректируем центрирование */
+    margin-top: 10px; /* Добавляем отступ сверху, чтобы не сливалось с карточкой */
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.massage-block:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.massage-img {
+    width: 270px !important; /* Фиксированная ширина */
+    height: 150px !important; /* Фиксированная высота */
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto; /* Центрирование */
+}
+
+
+ min-width: 250px; /* Минимальный размер */
+}
+
+.massage-title {
+    margin: 0;
+    color: #222;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.massage-description {
+    margin: 10px 0 0;
+    font-size: 1em;
+    color: #666;
+}
+
+.warning {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+.center-text {
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.warning {
+    font-weight: bold;
+    color: red;
+}
+/* Адаптация под мобильные устройства */
+@media (max-width: 1200px) {
+    .massage-container {
+        justify-content: center; /* При уменьшении экрана карточки центрируются */
+    }
+
+    .massage-block {
+        width: 280px; /* Немного уменьшаем, чтобы лучше влезали */
+    }
+}
+
+@media (max-width: 768px) {
+    .massage-container {
+        flex-direction: column; /* На маленьких экранах карточки идут в колонку */
+        align-items: center;
+    }
+
+    .massage-block {
+        width: 90%; /* Растягиваются по ширине экрана */
+    }
+}
