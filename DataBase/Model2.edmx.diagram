@@ -25,6 +25,7 @@
         <AssociationConnector Association="Model.FK__Сеанс__masseur__3F466844" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_Masseger_Masseger" ManuallyRouted="false" />
         <EntityTypeShape EntityType="Model.Massage_Booking" Width="1.5" PointX="0.5" PointY="6.625" />
+        <EntityTypeShape EntityType="Model.Massage" Width="1.5" PointX="10.625" PointY="6.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

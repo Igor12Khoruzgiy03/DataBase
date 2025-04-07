@@ -57,6 +57,16 @@
           <Property Name="frequently_chosen_massage" Type="varchar" MaxLength="50" />
           <Property Name="id_personal" Type="int" />
         </EntityType>
+        <EntityType Name="Massage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Duration" Type="int" />
+          <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
         <EntityType Name="Massage_Booking">
           <Key>
             <PropertyRef Name="Id" />
@@ -266,6 +276,7 @@
           <EntitySet Name="Detail_Client" EntityType="Self.Detail_Client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Detail_Massager" EntityType="Self.Detail_Massager" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Detail_Personal" EntityType="Self.Detail_Personal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Massage" EntityType="Self.Massage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Massage_Booking" EntityType="Self.Massage_Booking" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Massager" EntityType="Self.Massager" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
@@ -599,6 +610,7 @@
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
           <EntitySet Name="Massage_Booking" EntityType="Model.Massage_Booking" />
+          <EntitySet Name="Massage" EntityType="Model.Massage" />
         </EntityContainer>
         <EntityType Name="Massage_Booking">
           <Key>
@@ -609,6 +621,16 @@
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Time" Type="Time" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="Massage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Duration" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -785,6 +807,17 @@
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Massage">
+            <EntityTypeMapping TypeName="Model.Massage">
+              <MappingFragment StoreEntitySet="Massage">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

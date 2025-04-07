@@ -1,38 +1,17 @@
 ﻿using DataBase.Models;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Services.Description;
-using System.Web.UI.WebControls;
 
 namespace DataBase.Controllers
 {
-
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            return View("Views/Home/Index.cshtml");
+            return View();
         }
-        public ActionResult Classic()
-        {
-            return View("Classic.cshtml"); // Указываем полный путь
-        }
-
-        public ActionResult VRMassage()
-        {
-            return View("VRmassage.cshtml");
-        }
-
-        public ActionResult Immersion()
-        {
-            return View("immerrion.cshtml");
-        }
-
-
 
         public ActionResult ClientList()
         {
@@ -42,6 +21,7 @@ namespace DataBase.Controllers
                 return View(result);
             }
         }
+
         [HttpPost]
         public ActionResult BookMassage(MassageBookingModel model)
         {
@@ -59,13 +39,10 @@ namespace DataBase.Controllers
                     database.Massage_Booking.Add(newBooking);
                     database.SaveChanges();
                 }
-                return RedirectToAction("Classic");
+                return RedirectToAction("Classic", "Massages"); // Перенаправляем в новый контроллер
             }
             return View("Classic", model);
         }
-
-
-
 
         [HttpGet]
         public ActionResult EditClient(int? Id_client)
@@ -86,22 +63,31 @@ namespace DataBase.Controllers
         [HttpPost]
         public ActionResult EditClient(Client client)
         {
-            Massage_SalonEntities database = new Massage_SalonEntities();
-            database.Client.AddOrUpdate(client);
-            database.SaveChanges();
+            using (Massage_SalonEntities database = new Massage_SalonEntities())
+            {
+                database.Client.AddOrUpdate(client);
+                database.SaveChanges();
+            }
             return RedirectToAction("ClientList", "Home");
         }
+
         public ActionResult ClientCreate()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Delete(int Id)
         {
-            Massage_SalonEntities database = new Massage_SalonEntities();
-            var Client = database.Client.Find(Id);
-            database.Client.Remove(Client);
-            database.SaveChanges();
+            using (Massage_SalonEntities database = new Massage_SalonEntities())
+            {
+                var client = database.Client.Find(Id);
+                if (client != null)
+                {
+                    database.Client.Remove(client);
+                    database.SaveChanges();
+                }
+            }
             return RedirectToAction("ClientList", "Home");
         }
     }

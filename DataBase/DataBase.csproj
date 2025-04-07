@@ -136,6 +136,7 @@
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Content\StylessMasages.cs" />
+    <Compile Include="Controllers\MassagesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Detail_Client.cs">
       <DependentUpon>Model2.tt</DependentUpon>
@@ -149,17 +150,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Massage.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Massager.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Massage_Booking.cs">
       <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.cs" />
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model2.Context.cs">
       <AutoGen>True</AutoGen>
@@ -176,6 +174,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model2.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Massage.cs" />
     <Compile Include="Models\MassageBookingModel.cs" />
     <Compile Include="MSreplication_options.cs" />
     <Compile Include="Payments.cs">
@@ -244,13 +243,6 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <EntityDeploy Include="Model2.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model2.Designer.cs</LastGenOutput>
@@ -282,13 +274,13 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Study\About.cshtml" />
     <Content Include="Views\Home\Study\Contact.cshtml" />
-    <Content Include="Views\Home\Index\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Study\ClientList.cshtml" />
     <Content Include="Views\Home\Study\EditClient.cshtml" />
     <Content Include="Views\Home\Study\ClientCreate.cshtml" />
-    <Content Include="Views\Home\Massages\Classic.cshtml" />
-    <Content Include="Views\Home\Massages\immerrion.cshtml" />
-    <Content Include="Views\Home\Massages\VRmassage.cshtml" />
+    <Content Include="Views\Massages\Classic.cshtml" />
+    <Content Include="Views\Massages\immerrion.cshtml" />
+    <Content Include="Views\Massages\VRmassage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
