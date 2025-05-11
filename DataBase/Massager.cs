@@ -29,6 +29,10 @@ namespace DataBase
         public Nullable<decimal> number_of_sessions_per_month { get; set; }
         public Nullable<int> types_of_massage { get; set; }
         public Nullable<int> id_user { get; set; }
+        public string ImageUrl { get; set; }
+        public Nullable<double> Rating { get; set; }
+        public string Phone { get; set; }
+        public Nullable<bool> IsBusy { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Detail_Massager> Detail_Massager { get; set; }

@@ -19,5 +19,7 @@ namespace DataBase
         public string Description { get; set; }
         public Nullable<int> Duration { get; set; }
         public Nullable<decimal> Price { get; set; }
+        public string ImageUrl { get; set; }
+        public string Category { get; set; }
     }
 }

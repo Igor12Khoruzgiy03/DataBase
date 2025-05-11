@@ -66,6 +66,8 @@
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="Duration" Type="int" />
           <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="ImageUrl" Type="nvarchar(max)" />
+          <Property Name="Category" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Massage_Booking">
           <Key>
@@ -89,6 +91,10 @@
           <Property Name="number_of_sessions_per_month" Type="numeric" Precision="30" Scale="0" />
           <Property Name="types_of_massage" Type="int" />
           <Property Name="id_user" Type="int" />
+          <Property Name="ImageUrl" Type="nvarchar(max)" />
+          <Property Name="Rating" Type="float" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsBusy" Type="bit" />
         </EntityType>
         <EntityType Name="Payments">
           <Key>
@@ -166,6 +172,10 @@
           <Property Name="password_hash" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="role" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="created_at" Type="datetime" />
+          <Property Name="full_name" Type="nvarchar" MaxLength="255" />
+          <Property Name="is_active" Type="bit" />
+          <Property Name="last_login" Type="datetime" />
+          <Property Name="phone_number" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <Association Name="FK__Деталі_кл__Id_cl__46E78A0C">
           <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
@@ -388,6 +398,10 @@
           <NavigationProperty Name="Session" Relationship="Self.FK__Сеанс__masseur__3F466844" FromRole="Massager" ToRole="Session" />
           <NavigationProperty Name="Massager1" Relationship="Self.FK_Masseger_Masseger" FromRole="Massager" ToRole="Massager1" />
           <NavigationProperty Name="Massager2" Relationship="Self.FK_Masseger_Masseger" FromRole="Massager1" ToRole="Massager" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Rating" Type="Double" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsBusy" Type="Boolean" />
         </EntityType>
         <EntityType Name="Payments">
           <Key>
@@ -468,6 +482,10 @@
           <Property Name="password_hash" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="full_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="is_active" Type="Boolean" />
+          <Property Name="last_login" Type="DateTime" Precision="3" />
+          <Property Name="phone_number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK__Деталі_кл__Id_cl__46E78A0C">
           <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
@@ -631,6 +649,8 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Duration" Type="Int32" />
           <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -698,6 +718,10 @@
           <EntitySetMapping Name="Massager">
             <EntityTypeMapping TypeName="Model.Massager">
               <MappingFragment StoreEntitySet="Massager">
+                <ScalarProperty Name="IsBusy" ColumnName="IsBusy" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
                 <ScalarProperty Name="Id_masseger" ColumnName="Id_masseger" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="surname" ColumnName="surname" />
@@ -785,6 +809,10 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="Model.Users">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="last_login" ColumnName="last_login" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+                <ScalarProperty Name="full_name" ColumnName="full_name" />
                 <ScalarProperty Name="id_user" ColumnName="id_user" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="password_hash" ColumnName="password_hash" />
@@ -814,6 +842,8 @@
           <EntitySetMapping Name="Massage">
             <EntityTypeMapping TypeName="Model.Massage">
               <MappingFragment StoreEntitySet="Massage">
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Duration" ColumnName="Duration" />
                 <ScalarProperty Name="Description" ColumnName="Description" />

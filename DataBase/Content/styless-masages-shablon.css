@@ -1,0 +1,119 @@
+﻿.page-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Левая часть: массажисты и комната */
+.left-section {
+    width: 40%;
+    position: relative;
+    padding-left: 20px;
+}
+
+.massager-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    gap: 30px;
+}
+
+.massager-block, .room-block {
+    width: 180px;
+    text-align: center;
+}
+
+    .massager-block img,
+    .room-block img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .room-block p {
+        margin-top: 10px;
+    }
+
+/* Правая часть: инфа о массаже и форма */
+.right-section {
+    width: 55%;
+}
+
+.massage-info {
+    margin-bottom: 30px;
+}
+
+    .massage-info h3 {
+        margin-bottom: 5px;
+    }
+
+    .massage-info table {
+        margin-top: 10px;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .massage-info td {
+        padding: 5px 10px;
+    }
+
+/* Заголовок формы */
+.booking-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Контейнер формы */
+.booking-form-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Сама форма */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    gap: 10px;
+}
+
+    /* Поля ввода */
+    .booking-form input,
+    .booking-form select,
+    .booking-form button {
+        padding: 10px;
+        font-size: 14px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Кнопка */
+    .booking-form button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+.top-bar {
+    background-color: #4a4a4a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    position: relative;
+}
+
+.title-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+

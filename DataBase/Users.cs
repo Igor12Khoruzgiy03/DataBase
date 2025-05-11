@@ -19,5 +19,9 @@ namespace DataBase
         public string password_hash { get; set; }
         public string role { get; set; }
         public Nullable<System.DateTime> created_at { get; set; }
+        public string full_name { get; set; }
+        public Nullable<bool> is_active { get; set; }
+        public Nullable<System.DateTime> last_login { get; set; }
+        public string phone_number { get; set; }
     }
 }

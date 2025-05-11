@@ -1,5 +1,7 @@
 ﻿using DataBase.Models;
+using DataBase.ViewModels;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web.Mvc;
@@ -43,6 +45,20 @@ namespace DataBase.Controllers
             }
             return View("Classic", model);
         }
+        public ActionResult IndexMassages()
+        {
+            using (Massage_SalonEntities database = new Massage_SalonEntities())
+            {
+                var model = new MassagePageViewModel
+                {
+                    Massagers = database.Massager.ToList(),
+                    Massages = database.Massage.ToList()
+                };
+
+                return View(model);
+            }
+        }
+
 
         [HttpGet]
         public ActionResult EditClient(int? Id_client)

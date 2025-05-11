@@ -1,0 +1,79 @@
+﻿<link rel="stylesheet" href="~/Content/styless-masages-shablon.css" />
+
+
+@model DataBase.ViewModels.MassagePageViewModel
+
+@{
+    ViewBag.Title = "Пример массажа";
+    ViewBag.PageTitle = "Шаблон записи на массаж";
+}
+
+<div class="page-container">
+    <!-- Левая часть: массажисты и комната -->
+    <div class="massager-row">
+        <div class="massager-block">
+            <img src="/images/massager_sample.jpg" alt="Массажист" />
+            <p><strong>Иван Иванов</strong></p>
+            <p>Пол: Мужской</p>
+            <p style="color: green;">Свободен</p>
+        </div>
+
+        <div class="room-block">
+            <img src="/images/massage_room.jpg" alt="Комната массажа" />
+            <p>Комната массажа</p>
+        </div>
+
+        <div class="massager-block">
+            <img src="/images/massager_sample.jpg" alt="Массажист" />
+            <p><strong>Ира Иванова</strong></p>
+            <p>Пол: Женский</p>
+            <p style="color: green;">Свободен</p>
+        </div>
+    </div>
+
+
+    <!-- Правая часть: описание массажа и форма -->
+    <div class="right-section">
+
+        @if (Model.Massages.Any())
+        {
+            var massage = Model.Massages.First();
+
+            <div class="massage-info">
+                <h3>@massage.Name</h3>
+                <p>@massage.Description</p>
+                <p><strong>Цена:</strong> @massage.Price грн.</p>
+            </div>
+        }
+
+        <h3 class="booking-title">Запись на сеанс</h3>
+
+        <div class="booking-form-container">
+            <div class="booking-form">
+                <input type="text" placeholder="Ваше имя" />
+                <input type="text" placeholder="Номер телефона" />
+
+                <select>
+                    <option disabled selected>Выберите город</option>
+                    <option>Киев</option>
+                    <option>Львов</option>
+                    <option>Одесса</option>
+                </select>
+
+                <select>
+                    <option disabled selected>Выберите адрес</option>
+                    <option>ул. Ленина, 123</option>
+                    <option>ул. Грушевского, 10</option>
+                    <option>ул. Дерибасовская, 5</option>
+                </select>
+
+                <input type="datetime-local" />
+                <button>Записаться</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

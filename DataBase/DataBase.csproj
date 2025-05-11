@@ -136,6 +136,8 @@
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Content\StylessMasages.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\MassageCRUDController.cs" />
     <Compile Include="Controllers\MassagesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Detail_Client.cs">
@@ -174,8 +176,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model2.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\BookingViewModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\Massage.cs" />
     <Compile Include="Models\MassageBookingModel.cs" />
+    <Compile Include="Models\MassagePageViewModel.cs" />
+    <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="MSreplication_options.cs" />
     <Compile Include="Payments.cs">
       <DependentUpon>Model2.tt</DependentUpon>
@@ -223,6 +229,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Photo\bee-on-daisy.jpg" />
     <Content Include="Content\StyleSheet1.css" />
+    <Content Include="Content\styless-masages-shablon.css" />
     <Content Include="Content\styless-masages.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -281,12 +288,23 @@
     <Content Include="Views\Massages\Classic.cshtml" />
     <Content Include="Views\Massages\immerrion.cshtml" />
     <Content Include="Views\Massages\VRmassage.cshtml" />
+    <Content Include="Views\Massages\Index.cshtml" />
+    <Content Include="Views\MassageCRUD\Create.cshtml" />
+    <Content Include="Views\MassageCRUD\Delete.cshtml" />
+    <Content Include="Views\MassageCRUD\Details.cshtml" />
+    <Content Include="Views\MassageCRUD\Edit.cshtml" />
+    <Content Include="Views\MassageCRUD\Index.cshtml" />
+    <Content Include="Views\Home\IndexMassages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="Views\BookingViewModel\" />
     <Folder Include="Views\Default\" />
+    <Folder Include="Views\LoginViewModel\" />
     <Folder Include="Views\MassageBookingModel\" />
-    <Folder Include="Views\Massage\" />
+    <Folder Include="Views\MassagePageViewModel\" />
+    <Folder Include="Views\RegisterViewModel\" />
     <Folder Include="Views\StylessMasages\" />
   </ItemGroup>
   <ItemGroup>

@@ -6,18 +6,18 @@
     <edmx:Diagrams>
       <Diagram DiagramId="0717bd2d6bc34d04bb8abff7e0553137" Name="Diagram1" ZoomLevel="95">
         <EntityTypeShape EntityType="Model.Category_message" Width="1.5" PointX="0.5" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Client" Width="1.5" PointX="3.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Client" Width="1.5" PointX="3.75" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Detail_Client" Width="1.5" PointX="7" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Detail_Massager" Width="1.5" PointX="3" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Detail_Personal" Width="1.5" PointX="8.125" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Massager" Width="1.5" PointX="0.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Detail_Personal" Width="1.5" PointX="8.125" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Massager" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Payments" Width="1.5" PointX="8.75" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Personal" Width="1.5" PointX="5.625" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Service" Width="1.5" PointX="2.125" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Session" Width="1.5" PointX="6" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.transactions" Width="1.5" PointX="13" PointY="0.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Users" Width="1.5" PointX="10.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.transactions" Width="1.5" PointX="12.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Users" Width="1.5" PointX="10.625" PointY="3.125" IsExpanded="true" />
         <AssociationConnector Association="Model.FK__Деталі_кл__Id_cl__46E78A0C" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK__Сеанс__client__403A8C7D" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK__Деталі_ма__id_ma__49C3F6B7" ManuallyRouted="false" />
